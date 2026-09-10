@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Onego IDE
+Name[ru]=Онего IDE
+Comment=Educational assembler IDE for Onego-15VA
+Comment[ru]=Учебная среда для ассемблера Onego-15VA
+Exec=onego-ide
+Icon=onego-ide
+Terminal=false
+Categories=Education;Development;IDE;
+Keywords=assembler;emulator;education;onego;
+StartupNotify=true
+StartupWMClass=onego-ide
