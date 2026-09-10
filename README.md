@@ -48,7 +48,7 @@ sudo pacman -S python python-pyqt5
 ### Из исходников
 
 ```bash
-git clone https://gitflic.ru/project/pavelspb-dev/onego-ide.git
+git clone https://github.com/pavelspb-dev/onego-ide.git
 cd onego-ide
 python3 onegoide.py
 ```
