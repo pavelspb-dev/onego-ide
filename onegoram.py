@@ -1,11 +1,14 @@
 class AddressError(ValueError):
+    """Address is not valid"""
     pass
 
 class InvalidDataError(ValueError):
+    """Data is not valid"""
     pass
 
 class RAM:
     def __init__(self) -> None:
+        """Initializes RAM"""
         self.size = 16384
         self.memory = ["000000000000000" for _ in range(self.size)]
 
@@ -42,4 +45,5 @@ class RAM:
             raise AddressError(f"Адреса \"{addr}\" нет в RAM, запись невозможна.")
 
     def dump(self) -> list:
+        """Returns dump of memory"""
         return self.memory
