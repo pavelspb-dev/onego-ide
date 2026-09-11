@@ -1,20 +1,26 @@
 class AddressError(ValueError):
+    """Address is not valid"""
     pass
 
 class InvalidDataError(ValueError):
+    """Data is not valid"""
     pass
 
 class SSD:
-    def __init__(self) -> None:
+    def __init__(self):
+        """Initializes SSD"""
         self.size = 16384
         self.memory = ["000000000000000" for _ in range(self.size)]
 
     def init(self) -> None:
+        """Loads data from disc image to SSD.memory"""
+
         with open("onegossd.img", "r") as img:
             data = img.read().strip()
 
-        for index, data_ in enumerate([data[i:i+15] for i in range(0, len(data), 15)], start=0):
-            self.memory[index] = data_
+        # Split str to list(15-symbols str) and write it to memory
+        for index, data15 in enumerate([data[i:i+15] for i in range(0, len(data), 15)], start=0):
+            self.memory[index] = data15
 
     def read(self, addr: int) -> str:
         """Returns data from address addr"""
@@ -49,4 +55,5 @@ class SSD:
             raise AddressError(f"Адреса \"{addr}\" нет на SSD, запись невозможна.")
 
     def dump(self) -> list:
+        """Returns dump of SSD.memory"""
         return self.memory
